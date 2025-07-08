@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const HeaderHome = ({ user }) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const isActive = (path) => currentPath === path ? 'active' : '';
+  const isActive = (path) => (currentPath === path ? "active" : "");
 
   return (
     <header className="main-header header-one white-menu menu-absolute">
@@ -15,7 +15,11 @@ const HeaderHome = ({ user }) => {
             <div className="logo-outer">
               <div className="logo">
                 <Link to="/">
-                  <img src="/assets/images/logos/logo.png" alt="Logo" title="Logo" />
+                  <img
+                    src="/assets/images/logos/logo.png"
+                    alt="Logo"
+                    title="Logo"
+                  />
                 </Link>
               </div>
             </div>
@@ -25,10 +29,19 @@ const HeaderHome = ({ user }) => {
                 <div className="navbar-header">
                   <div className="mobile-logo">
                     <Link to="/">
-                      <img src="/clients/assets/images/logos/logo.png" alt="Logo" title="Logo" />
+                      <img
+                        src="/clients/assets/images/logos/logo.png"
+                        alt="Logo"
+                        title="Logo"
+                      />
                     </Link>
                   </div>
-                  <button type="button" className="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                  <button
+                    type="button"
+                    className="navbar-toggle"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse"
+                  >
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
@@ -37,19 +50,44 @@ const HeaderHome = ({ user }) => {
 
                 <div className="navbar-collapse collapse clearfix">
                   <ul className="navigation clearfix">
-                    <li className={isActive('/')}> <Link to="/">Trang chủ</Link></li>
-                    <li className={isActive('/about')}> <Link to="/about">Giới thiệu</Link></li>
-                    <li className={`dropdown ${['/tours', '/team'].includes(currentPath) ? 'active' : ''}`}>
-                       <a href="#">Tours</a>
+                    <li className={isActive("/")}>
+                      {" "}
+                      <Link to="/">Trang chủ</Link>
+                    </li>
+                    <li className={isActive("/about")}>
+                      {" "}
+                      <Link to="/about">Giới thiệu</Link>
+                    </li>
+                    <li
+                      className={`dropdown ${
+                        ["/tours", "/team"].includes(currentPath)
+                          ? "active"
+                          : ""
+                      }`}
+                    >
+                      <a href="#">Tours</a>
                       <ul>
-                        <li><Link to="/tours">Tours</Link></li>
-                        <li><Link to="/team">Hướng dẫn viên</Link></li>
+                        <li>
+                          <Link to="/tours">Tours</Link>
+                        </li>
+                        <li>
+                          <Link to="/team">Hướng dẫn viên</Link>
+                        </li>
                       </ul>
                     </li>
-                    
-                    <li className={isActive('/destination')}> <Link to="/destination">Điểm đến</Link></li>
-                     <li className={isActive('/service')}> <Link to="/service">Dịch Vụ</Link></li>
-                    <li className={isActive('/contact')}> <Link to="/contact">Liên hệ</Link></li>
+
+                    <li className={isActive("/destination")}>
+                      {" "}
+                      <Link to="/destinations">Điểm đến</Link>
+                    </li>
+                    <li className={isActive("/service")}>
+                      {" "}
+                      <Link to="/service">Dịch Vụ</Link>
+                    </li>
+                    <li className={isActive("/contact")}>
+                      {" "}
+                      <Link to="/contact">Liên hệ</Link>
+                    </li>
                   </ul>
                 </div>
               </nav>
@@ -58,9 +96,22 @@ const HeaderHome = ({ user }) => {
             <div className="nav-search">
               <button className="far fa-search"></button>
               <form action="/search-voice-text" className="hide" method="GET">
-                <input type="text" name="keyword" placeholder="Search" className="searchbox" required />
-                <i className="fa fa-microphone" style={{ margin: '0 16px' }} id="voice-search"></i>
-                <button type="submit" className="searchbutton far fa-search"></button>
+                <input
+                  type="text"
+                  name="keyword"
+                  placeholder="Search"
+                  className="searchbox"
+                  required
+                />
+                <i
+                  className="fa fa-microphone"
+                  style={{ margin: "0 16px" }}
+                  id="voice-search"
+                ></i>
+                <button
+                  type="submit"
+                  className="searchbutton far fa-search"
+                ></button>
               </form>
             </div>
 
@@ -71,28 +122,47 @@ const HeaderHome = ({ user }) => {
               </Link>
               <div className="menu-sidebar">
                 <li className="drop-down">
-                  <button className="dropdown-toggle bg-transparent" id="userDropdown" style={{ color: 'white' }}>
+                  <button
+                    className="dropdown-toggle bg-transparent"
+                    id="userDropdown"
+                    style={{ color: "white" }}
+                  >
                     {user?.avatar ? (
-                      <img className="img-account-profile rounded-circle" src={user.avatar} style={{ width: 36, height: 36 }} alt="avatar" />
+                      <img
+                        className="img-account-profile rounded-circle"
+                        src={user.avatar}
+                        style={{ width: 36, height: 36 }}
+                        alt="avatar"
+                      />
                     ) : (
-                      <i className='bx bxs-user bx-tada' style={{ fontSize: 36, color: 'white' }}></i>
+                      <i
+                        className="bx bxs-user bx-tada"
+                        style={{ fontSize: 36, color: "white" }}
+                      ></i>
                     )}
                   </button>
                   <ul className="dropdown-menu" id="dropdownMenu">
                     {user?.username ? (
                       <>
-                        <li><Link to="/profile">Thông tin cá nhân</Link></li>
-                        <li><Link to="/my-tours">Tour đã đặt</Link></li>
-                        <li><Link to="/logout">Đăng xuất</Link></li>
+                        <li>
+                          <Link to="/profile">Thông tin cá nhân</Link>
+                        </li>
+                        <li>
+                          <Link to="/my-tours">Tour đã đặt</Link>
+                        </li>
+                        <li>
+                          <Link to="/logout">Đăng xuất</Link>
+                        </li>
                       </>
                     ) : (
-                      <li><Link to="/login">Đăng nhập</Link></li>
+                      <li>
+                        <Link to="/login">Đăng nhập</Link>
+                      </li>
                     )}
                   </ul>
                 </li>
               </div>
             </div>
-
           </div>
         </div>
       </div>

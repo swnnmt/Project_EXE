@@ -83,7 +83,7 @@ const Destinations = ({ tours }) => {
                       }}
                     />
                     <img
-                      src={`/admin/assets/images/gallery-tours/${tour.images[0]}`}
+                      src={`/assets/images/gallery-tours/${tour.images[0]}`}
                       alt="Destination"
                       style={{ width: "100%", objectFit: "cover", height: 250 }}
                     />

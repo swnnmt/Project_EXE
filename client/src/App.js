@@ -9,6 +9,30 @@ import HeaderHome from "./components/HeaderHome";
 import Destinations from "./screens/destinations";
 import AboutPage from "./screens/about";
 export default function App() {
+  const tours = [
+    {
+      tourId: "1",
+      title: "Hạ Long",
+      time: "3 ngày 2 đêm",
+      domain: "b", // b: Bắc, t: Trung, n: Nam
+      images: ["halong.jpg"],
+    },
+    {
+      tourId: "2",
+      title: "Đà Nẵng",
+      time: "2 ngày 1 đêm",
+      domain: "t",
+      images: ["danang.jpg"],
+    },
+    {
+      tourId: "3",
+      title: "Phú Quốc",
+      time: "4 ngày 3 đêm",
+      domain: "n",
+      images: ["phuquoc.jpg"],
+    },
+  ];
+
   return (
     <BrowserRouter>
       <HeaderHome />
@@ -18,7 +42,7 @@ export default function App() {
         <Route path="/tours" element={<Tours />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Service />} />
-        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/destinations" element={<Destinations tours={tours} />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
       <FooterHome />
