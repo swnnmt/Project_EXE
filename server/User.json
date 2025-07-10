@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "123456",
+    "email": "admin@example.com",
+    "avatar": "https://i.pravatar.cc/100",
+    "fullName": "Admin User",
+    "address": "Hà Nội",
+    "phoneNumber": "0988888888"
+  },
+  {
+    "id": 1751741843642,
+    "username": "admin2",
+    "email": "tnghiem003@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751741858704,
+    "username": "admin3",
+    "email": "tnghiem004@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751741895062,
+    "username": "admin4",
+    "email": "tnghiem005@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751742062460,
+    "username": "admin5",
+    "email": "tnghiem006@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751989548696,
+    "username": "admin9",
+    "email": "tnghiem009@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751990179188,
+    "username": "admin10",
+    "email": "tnghiem0010@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751990393153,
+    "username": "admin11",
+    "email": "tnghiem0011@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751990435274,
+    "username": "admin12",
+    "email": "tnghiem0012@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751990563183,
+    "username": "admin7",
+    "email": "tnghiem007@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751990586964,
+    "username": "admin8",
+    "email": "tnghiem008@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751990626841,
+    "username": "admin20",
+    "email": "tnghiem0020@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  },
+  {
+    "id": 1751990920769,
+    "username": "admin21",
+    "email": "tnghiem0021@gmail.com",
+    "password": "123456",
+    "avatar": ""
+  }
+]

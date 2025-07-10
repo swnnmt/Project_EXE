@@ -1,0 +1,18 @@
+[
+  {
+    "userId": 1752000000001,
+    "fullName": "Admin One",
+    "address": "Hà Nội, Việt Nam",
+    "phoneNumber": "0987654321",
+    "gender": "Nam",
+    "dob": "1995-01-01"
+  },
+  {
+    "userId": 1751741843642,
+    "fullName": "Admin Two",
+    "address": "Đà Nẵng",
+    "phoneNumber": "0911222333",
+    "gender": "Nữ",
+    "dob": "1996-02-02"
+  }
+]

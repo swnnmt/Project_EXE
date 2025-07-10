@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from '../context/AuthContext';
 
-const HeaderHome = ({ user }) => {
+
+
+const HeaderHome = () => {
   const location = useLocation();
+  const { user, logout } = useAuth();
+  const [showWelcome, setShowWelcome] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const currentPath = location.pathname;
+  useEffect(() => {
+    if (user?.username) {
+      setShowWelcome(true);
+      const timer = setTimeout(() => setShowWelcome(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [user]);
 
   const isActive = (path) => (currentPath === path ? "active" : "");
+  const toggleDropdown = () => {
+    setShowDropdown((prev) => !prev);
+  };
 
   return (
     <header className="main-header header-one white-menu menu-absolute">
@@ -15,11 +31,7 @@ const HeaderHome = ({ user }) => {
             <div className="logo-outer">
               <div className="logo">
                 <Link to="/">
-                  <img
-                    src="/assets/images/logos/logo.png"
-                    alt="Logo"
-                    title="Logo"
-                  />
+                  <img src="/assets/images/logos/logo3.png" alt="Logo" title="Logo" />
                 </Link>
               </div>
             </div>
@@ -59,13 +71,12 @@ const HeaderHome = ({ user }) => {
                       <Link to="/about">Giới thiệu</Link>
                     </li>
                     <li
-                      className={`dropdown ${
-                        ["/tours", "/team"].includes(currentPath)
-                          ? "active"
-                          : ""
-                      }`}
+                      className={`dropdown ${["/tours", "/team"].includes(currentPath)
+                        ? "active"
+                        : ""
+                        }`}
                     >
-                      <a href="#">Tours</a>
+                      <a href="tours">Tours</a>
                       <ul>
                         <li>
                           <Link to="/tours">Tours</Link>
@@ -124,7 +135,7 @@ const HeaderHome = ({ user }) => {
                 <li className="drop-down">
                   <button
                     className="dropdown-toggle bg-transparent"
-                    id="userDropdown"
+                    onClick={toggleDropdown}
                     style={{ color: "white" }}
                   >
                     {user?.avatar ? (
@@ -141,25 +152,37 @@ const HeaderHome = ({ user }) => {
                       ></i>
                     )}
                   </button>
-                  <ul className="dropdown-menu" id="dropdownMenu">
-                    {user?.username ? (
-                      <>
+
+                  {showDropdown && (
+                    <ul className="dropdown-menu show" id="dropdownMenu" style={{ position: "absolute", top: "50px", right: 0 }}>
+                      {user?.username ? (
+                        <>
+                          <li>
+                            <Link to="/profile" onClick={() => setShowDropdown(false)}>Thông tin cá nhân</Link>
+                          </li>
+                          <li>
+                            <Link to="/my-tours" onClick={() => setShowDropdown(false)}>Tour đã đặt</Link>
+                          </li>
+                          <li>
+                            <button className="dropdown-item" onClick={() => { logout(); setShowDropdown(false); }}>
+                              Đăng xuất
+                            </button>
+                          </li>
+                        </>
+                      ) : (
                         <li>
-                          <Link to="/profile">Thông tin cá nhân</Link>
+                          <Link to="/login" onClick={() => setShowDropdown(false)}>Đăng nhập</Link>
                         </li>
-                        <li>
-                          <Link to="/my-tours">Tour đã đặt</Link>
-                        </li>
-                        <li>
-                          <Link to="/logout">Đăng xuất</Link>
-                        </li>
-                      </>
-                    ) : (
-                      <li>
-                        <Link to="/login">Đăng nhập</Link>
-                      </li>
-                    )}
-                  </ul>
+                      )}
+                    </ul>
+                  )}
+
+                  {user?.username && showWelcome && (
+                    <div className="welcome-banner">
+                      👋 Xin chào {user.username}!
+                    </div>
+                  )}
+
                 </li>
               </div>
             </div>
