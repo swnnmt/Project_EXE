@@ -6,12 +6,13 @@ import { AuthProvider } from "./context/AuthContext";
 import HeaderHome from "./components/HeaderHome";
 import FooterHome from "./components/FooterHome";
 
+import AboutPage from './screens/about';
+import Experience from './screens/experience'
 import Home from "./screens/home";
 import Tours from "./screens/tour";
 import Contact from "./screens/contact";
 import Service from "./screens/service";
-import Destinations from "./screens/destinations";
-import AboutPage from "./screens/about";
+
 import Login from "./screens/login";
 import UserProfile from "./screens/profileUser";
 
@@ -59,10 +60,10 @@ export default function App() {
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/tours" element={<Tours />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/service" element={<Service />} />
-            <Route path="/destinations" element={<Destinations tours={tours} />} />
-            <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<Contact />} />
+         <Route path="/service" element={<Service />} />
+          <Route path="/about" element={<AboutPage />} />
+           <Route path="/experience" element={<Experience />} />
           </Route>
 
           <Route path="/login" element={<Login />} />

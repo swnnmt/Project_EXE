@@ -69,14 +69,21 @@ export default function FooterHome() {
             <div className="col-xl-5 col-lg-6" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
               <div className="footer-widget footer-text">
                 <div className="footer-logo mb-25">
-                  <Link to="/"><img src="/assets/images/logos/logo5.png" alt="Logo" /></Link>
+                    <Link to="/">
+                <img
+                  src="/assets/images/logos/logo3 copy 2.png"
+                  alt="Logo"
+                  title="Logo"
+                  style={{ width: '150px', height: '70px' }}
+                />
+              </Link>
                 </div>
                 <p>
                   Chúng tôi biên soạn các hành trình riêng biệt phù hợp với sở thích của bạn, đảm bảo mọi chuyến đi đều
                   liền mạch và làm phong phú thêm những viên ngọc ẩn giấu
                 </p>
                 <div className="social-style-one mt-15">
-                  <a href="https://www.facebook.com/dienne.dev"><i className="fab fa-facebook-f"></i></a>
+                  <a href=""><i className="fab fa-facebook-f"></i></a>
                   <a href="/contact"><i className="fab fa-youtube"></i></a>
                   <a href="/contact"><i className="fab fa-pinterest"></i></a>
                   <a href="/contact"><i className="fab fa-twitter"></i></a>

@@ -57,7 +57,7 @@ const ContactPage= () => {
                       <h5>Cần trợ giúp và hỗ trợ</h5>
                       <div className="text">
                         <i className="far fa-envelope"></i>{' '}
-                        <a href="sonmthe170091@fpt.edu.vn">sonmthe170091@fpt.edu.vn</a>
+                        <a href="campverse8386@gmail.com">campverse8386@gmail.com</a>
                       </div>
                     </div>
                   </div>

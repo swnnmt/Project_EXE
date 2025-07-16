@@ -1,244 +1,266 @@
 import React from "react";
-import { Row, Col, Typography, Button, Tag } from "antd";
-import {
-  DollarOutlined,
-  EnvironmentOutlined,
-  ClockCircleOutlined,
-  CompassOutlined,
-} from "@ant-design/icons";
+import { Link } from "react-router-dom";
+import BannerHome from "../components/BannerHome";
 
-const { Title, Paragraph } = Typography;
 const AboutPage = () => {
-  const features = [
-    {
-      icon: <DollarOutlined style={{ fontSize: 40, color: "#1890ff" }} />,
-      title: "Đảm bảo giá tốt nhất",
-      desc: "Cam kết giá ưu đãi nhất, giúp bạn tiết kiệm tối đa chi phí du lịch.",
-    },
-    {
-      icon: <EnvironmentOutlined style={{ fontSize: 40, color: "#52c41a" }} />,
-      title: "Điểm đến đa dạng",
-      desc: "Hàng nghìn điểm đến hấp dẫn, phù hợp mọi sở thích.",
-    },
-    {
-      icon: <ClockCircleOutlined style={{ fontSize: 40, color: "#faad14" }} />,
-      title: "Đặt chỗ nhanh",
-      desc: "Quy trình đặt chỗ đơn giản, nhanh chóng.",
-    },
-    {
-      icon: <CompassOutlined style={{ fontSize: 40, color: "#eb2f96" }} />,
-      title: "Hướng dẫn du lịch tốt",
-      desc: "Đội ngũ hướng dẫn tận tâm, giàu kinh nghiệm.",
-    },
-  ];
-
   return (
     <>
-      {/* Banner + Header bạn có thể import từ component riêng */}
-      {/* <Header /> */}
-      {/* <Banner /> */}
+      <BannerHome />
+      <style>{`
+  @keyframes fall1 {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(120px) rotate(360deg); opacity: 0; }
+  }
+  .leaf {
+    position: absolute;
+    color: #2e8b57; /* Màu xanh lá cây đậm */
+    font-size: 18px;
+    animation: fall1 4s linear infinite;
+    pointer-events: none;
+  }
+  .leaf2 {
+    left: 30px;
+    font-size: 22px;
+    animation-delay: 1s;
+    color: #3cb371; /* Màu xanh lá tươi hơn */
+  }
+  .leaf3 {
+    left: 60px;
+    font-size: 20px;
+    animation-delay: 2s;
+    color: #228b22; /* ForestGreen */
+  }
+`}</style>
 
-      {/* --- About Section --- */}
-      <section className="about-area-two" style={{ padding: "100px 0" }}>
+      {/* About Area */}
+      <section className="about-area-two py-100 rel z-1">
         <div className="container">
-          <Row justify="space-between">
-            <Col xl={3}>
-              <span className="subtitle mb-35">Về chúng tôi</span>
-            </Col>
-            <Col xl={9}>
-              <Row gutter={[24, 24]}>
-                <Col lg={16}>
-                  <Title level={2}>
-                    Kinh nghiệm và công ty du lịch chuyên nghiệp ở Việt Nam
-                  </Title>
-                </Col>
-                <Col md={8}>
-                  <div className="experience-years">
-                    <Tag color="purple" style={{ fontSize: 14 }}>
-                      Năm kinh nghiệm
-                    </Tag>
-                    <Paragraph>Chúng tôi có</Paragraph>
-                    <Title level={3}>5+</Title>
+          <div className="row justify-content-between">
+            <div
+              className="col-xl-3"
+              data-aos="fade-right"
+              data-aos-duration="1500"
+              data-aos-offset="50"
+            >
+              <span className="subtitle mb-35">Về Campverse</span>
+            </div>
+            <div className="col-xl-9">
+              <div
+                className="about-page-content"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-offset="50"
+              >
+                <div className="row">
+                  <div className="col-lg-8 pe-lg-5 me-lg-5">
+                    <div className="section-title mb-25">
+                      <h2>Hành trình của Campverse</h2>
+                    </div>
                   </div>
-                </Col>
-                <Col md={24}>
-                  <Paragraph>
-                    Chúng tôi chuyên tạo ra những trải nghiệm thành phố khó quên
-                    cho du khách muốn khám phá trái tim và tâm hồn của cảnh quan
-                    đô thị...
-                  </Paragraph>
-                  <ul className="list-style-two">
-                    <li>Cơ quan Trải nghiệm</li>
-                    <li>Đội ngũ Chuyên nghiệp</li>
-                    <li>Du lịch Chi phí Thấp</li>
-                    <li>Hỗ trợ Trực tuyến 24/7</li>
-                  </ul>
-                  <Button type="primary" className="mt-3">
-                    Khám phá Tours
-                  </Button>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </div>
-      </section>
 
-      {/* --- About Features --- */}
-      <section className="about-features-area">
-        <div className="container">
-          <Row gutter={[24, 24]} align="middle">
-            {[1, 2].map((i) => (
-              <Col key={i} xl={4} md={6}>
-                <img
-                  src={`/assets/images/about/about-feature${i}.jpg`}
-                  alt={`about-${i}`}
-                  style={{ width: "100%" }}
-                />
-              </Col>
-            ))}
-            <Col xl={16}>
-              <div className="about-feature-boxes">
-                <div className="feature-item bgc-secondary">
-                  <h5>Chúng tôi là công ty đạt giải thưởng</h5>
-                  <p>Cam kết sự xuất sắc và đổi mới đã đạt được.</p>
-                </div>
-                <div className="feature-item bgc-primary mt-3">
-                  <h5>5000+ Điểm đến du lịch phổ biến</h5>
-                  <p>Chiến lược tiên tiến thúc đẩy thành công du lịch.</p>
+                  <div className="col-md-4 d-flex justify-content-center">
+                    <div
+                      className="experience-years rmb-20 text-center"
+                      style={{ position: "relative", padding: "10px" }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: 500,
+                          fontStyle: "italic",
+                          color: "#444",
+                          lineHeight: "1.6",
+                          zIndex: 2,
+                          position: "relative",
+                        }}
+                      >
+                        "Khởi nguồn từ một nơi bình dị –
+                        <br />
+                        nơi gọi là{" "}
+                        <span style={{ fontWeight: 700 }}>giảng đường</span>"
+                      </div>
+                      {/* Lá rơi hiệu ứng xanh lá */}
+                      <div
+                        className="leaf"
+                        style={{ left: "10px", top: "0px" }}
+                      >
+                        🍃
+                      </div>
+                      <div className="leaf leaf2" style={{ top: "0px" }}>
+                        🍃
+                      </div>
+                      <div className="leaf leaf3" style={{ top: "0px" }}>
+                        🍃
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="col-md-8"
+                    style={{
+                      marginLeft: "-10px", // dịch nhẹ vào để cân với bên trái
+                      paddingRight: "10px",
+                      textAlign: "justify",
+                    }}
+                  >
+                    <p>
+                      Campverse được bắt đầu từ những chiều hoàng hôn lặng lẽ
+                      sau giảng đường. Sáu tâm hồn trẻ, mỗi người một ngả, gặp
+                      nhau ở giao lộ của những khao khát được sống chậm, được
+                      chạm vào thiên nhiên và lắng nghe chính mình.
+                    </p>
+                    <p>
+                      Từ những chuyến đi đầy gió và bụi, từ những buổi chuyện
+                      trò với người giữ rừng, giữ suối, chúng mình đã gom nhặt
+                      từng niềm tin nhỏ để thắp lên một ngọn lửa cho một nền
+                      tảng giúp kết nối con người với nhau qua những đêm cắm
+                      trại, qua tiếng suối, qua ánh lửa bập bùng.
+                    </p>
+                    <p>
+                      Campverse không phải là một dự án, mà là một lời mời – mời
+                      bạn cùng đi, cùng chạm vào thiên nhiên, và chạm lại vào
+                      chính tâm hồn mình.
+                    </p>
+                    <Link to="/tours" className="theme-btn style-three mt-30">
+                      <span data-hover="Khám phá hành trình">
+                        Khám phá hành trình
+                      </span>
+                      <i className="fal fa-arrow-right"></i>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </Col>
-          </Row>
-        </div>
-      </section>
-
-      {/* --- About Us Area --- */}
-      <section className="about-us-area" style={{ padding: "70px 0 100px" }}>
-        <div className="container">
-          <Row align="middle" gutter={48}>
-            <Col xl={10}>
-              <Title level={2}>
-                Du lịch với sự tự tin – Lý do chọn công ty của chúng tôi
-              </Title>
-              <Paragraph>
-                Chúng tôi hợp tác chặt chẽ với khách hàng để cung cấp giải pháp
-                du lịch phù hợp...
-              </Paragraph>
-              <Row gutter={[16, 16]}>
-                <Col span={12}>
-                  <Title level={4}>1K+</Title>
-                  <p>Điểm đến phổ biến</p>
-                </Col>
-                <Col span={12}>
-                  <Title level={4}>8M+</Title>
-                  <p>Khách hàng hài lòng</p>
-                </Col>
-              </Row>
-              <Button type="default" className="mt-3">
-                Khám phá các điểm đến
-              </Button>
-            </Col>
-            <Col xl={14}>
-              <img
-                src="/assets/images/about/about-page.jpg"
-                alt="About Us"
-                style={{ width: "100%" }}
-              />
-            </Col>
-          </Row>
-        </div>
-      </section>
-
-      {/* --- Team Area --- */}
-      <section className="about-team-area pb-70">
-        <div className="container">
-          <div className="text-center mb-5">
-            <Title level={2}>
-              Gặp gỡ những hướng dẫn viên du lịch giàu kinh nghiệm của chúng tôi
-            </Title>
-            <p>
-              Website <span className="count-text plus bgc-primary">34500</span>{" "}
-              trải nghiệm đáng nhớ
-            </p>
+            </div>
           </div>
-          <Row justify="center" gutter={[24, 24]}>
-            {[
-              {
-                name: "NGUYEN MINH DIEN",
-                role: "Founder",
-                img: "/assets/images/team/guide-dien.jpg",
-              },
-              {
-                name: "BAO NGAN",
-                role: "Co-founder",
-                img: "/assets/images/team/guide-ngan.jpg",
-              },
-            ].map((guide, idx) => (
-              <Col key={idx} xl={4} lg={6} md={8} sm={12}>
-                <div className="team-item">
-                  <img
-                    src={guide.img}
-                    alt={guide.name}
-                    style={{ width: "100%" }}
-                  />
-                  <div className="content">
-                    <h6>{guide.name}</h6>
-                    <span>{guide.role}</span>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
         </div>
       </section>
 
-      {/* --- Features Area 2 --- */}
-      <section className="about-feature-two pt-100 pb-45 bg-black text-white">
+      {/* Features - Vision & Mission */}
+      <section className="about-features-area">
         <div className="container">
-          <div className="text-center mb-50">
-            <Title level={2} style={{ color: "white" }}>
-              Làm thế nào để hưởng lợi từ các chuyến du lịch của chúng tôi
-            </Title>
-            <p>
-              Website <span className="count-text plus">34500</span> trải nghiệm
-              đáng nhớ
-            </p>
-          </div>
-          <Row gutter={[24, 24]}>
-            {features.map((feature, idx) => (
-              <Col key={idx} xl={6} md={12}>
-                <div className="feature-item text-center">
-                  <div className="icon mb-20">{feature.icon}</div>
-                  <div className="content">
-                    <h5>{feature.title}</h5>
-                    <p>{feature.desc}</p>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      </section>
-
-      {/* --- Client Logos --- */}
-      <div className="client-logo-area mb-100">
-        <div className="container text-center">
-          <Title level={4}>Chúng tôi được giới thiệu bởi:</Title>
-          <Row justify="center" gutter={[24, 24]}>
-            {[1, 2, 3, 4, 5].map((num) => (
-              <Col key={num} md={4} sm={6} xs={8}>
+          <div className="row align-items-center">
+            <div className="col-xl-4 col-md-6">
+              <div className="about-feature-image" data-aos="fade-up">
                 <img
-                  src={`/assets/images/client-logos/client-logo${num}.png`}
-                  alt={`Logo ${num}`}
-                  style={{ width: "100%" }}
+                  src="/assets/images/about/about-feature1.jpg"
+                  alt="About"
                 />
-              </Col>
-            ))}
-          </Row>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div
+                className="about-feature-image"
+                data-aos="fade-up"
+                data-aos-delay="50"
+              >
+                <img
+                  src="/assets/images/about/about-feature2.jpg"
+                  alt="About"
+                />
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-8">
+              <div
+                className="about-feature-boxes"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div className="feature-item style-three bgc-secondary">
+                  <div className="icon-title">
+                    <div className="icon">
+                      <i className="flaticon-award-symbol"></i>
+                    </div>
+                    <h5>Tầm nhìn</h5>
+                  </div>
+                  <div className="content">
+                    <p>
+                      Trở thành nền tảng dẫn đầu về trải nghiệm cắm trại số hóa
+                      và bền vững tại Việt Nam, nơi mỗi chuyến đi là hành trình
+                      kết nối con người với thiên nhiên và chính mình.
+                    </p>
+                  </div>
+                </div>
+                <div className="feature-item style-three bgc-primary">
+                  <div className="icon-title">
+                    <div className="icon">
+                      <i className="flaticon-tourism"></i>
+                    </div>
+                    <h5>Sứ mệnh</h5>
+                  </div>
+                  <div className="content">
+                    <p>
+                      Đơn giản hóa và cá nhân hóa hành trình cắm trại cho người
+                      Việt, thông qua công nghệ thân thiện và dịch vụ minh bạch.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* <Footer /> */}
+      {/* About Us - Core Values */}
+      <section className="about-us-area pt-70 pb-100 rel z-1">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-xl-5 col-lg-6">
+              <div className="about-us-content rmb-55" data-aos="fade-left">
+                <div className="section-title mb-25">
+                  <h2>Giá trị cốt lõi</h2>
+                </div>
+                <ul className="list-style-two mt-20">
+                  <li>
+                    <p>
+                      <strong style={{ display: "block", marginBottom: "5px" }}>
+                        Chạm thật – sống thật
+                      </strong>
+                      Chúng tôi lựa chọn sự chân thật trong mọi hành trình – ảnh
+                      thật, cảm xúc thật, phản hồi thật.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong style={{ display: "block", marginBottom: "5px" }}>
+                        Công nghệ phục vụ cảm xúc
+                      </strong>
+                      Dữ liệu là công cụ, nhưng cảm xúc mới là kim chỉ nam –
+                      Campverse thiết kế trải nghiệm bằng trái tim.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong style={{ display: "block", marginBottom: "5px" }}>
+                        Cá nhân hóa từng trải nghiệm
+                      </strong>
+                      Mỗi người là một câu chuyện, và Campverse tôn trọng hành
+                      trình riêng biệt đó trong thiên nhiên.
+                    </p>
+                  </li>
+                </ul>
+
+                <Link
+                  to="/destination-details"
+                  className="theme-btn mt-10 style-two"
+                >
+                  <span data-hover="Hành trình của bạn">
+                    Hành trình của bạn
+                  </span>
+                  <i className="fal fa-arrow-right"></i>
+                </Link>
+              </div>
+            </div>
+            <div className="col-xl-7 col-lg-6" data-aos="fade-right">
+              <div className="about-us-page">
+                <img src="/assets/images/about/about-page.jpg" alt="About" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Các phần khác giữ nguyên hoặc ẩn nếu không phù hợp */}
+      {/* Nếu không cần phần 'Team' hoặc 'Feature Two' thì có thể xóa hoặc comment lại tùy bạn */}
     </>
   );
 };

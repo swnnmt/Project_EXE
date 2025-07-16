@@ -42,9 +42,10 @@ const HeaderHome = () => {
                   <div className="mobile-logo">
                     <Link to="/">
                       <img
-                        src="/clients/assets/images/logos/logo.png"
+                        src="/assets/images/logos/logo3 copy 2.png"
                         alt="Logo"
                         title="Logo"
+                        style={{ width: '150px', height: '70px' }}
                       />
                     </Link>
                   </div>
@@ -60,45 +61,22 @@ const HeaderHome = () => {
                   </button>
                 </div>
 
-                <div className="navbar-collapse collapse clearfix">
+               <div className="navbar-collapse collapse clearfix">
                   <ul className="navigation clearfix">
-                    <li className={isActive("/")}>
-                      {" "}
-                      <Link to="/">Trang chủ</Link>
-                    </li>
-                    <li className={isActive("/about")}>
-                      {" "}
-                      <Link to="/about">Giới thiệu</Link>
-                    </li>
-                    <li
-                      className={`dropdown ${["/tours", "/team"].includes(currentPath)
-                        ? "active"
-                        : ""
-                        }`}
-                    >
-                      <a href="tours">Tours</a>
+                    <li className={isActive('/')}> <Link to="/">Trang chủ</Link></li>
+                    <li className={isActive('/about')}> <Link to="/about">Giới thiệu</Link></li>
+                    
+                    {/* <li className={`dropdown ${['/tours', '/team'].includes(currentPath) ? 'active' : ''}`}>
+                       <a href="#">Tours</a>
                       <ul>
-                        <li>
-                          <Link to="/tours">Tours</Link>
-                        </li>
-                        <li>
-                          <Link to="/team">Hướng dẫn viên</Link>
-                        </li>
+                        <li><Link to="/tours">Tours</Link></li>
+                        <li><Link to="/team">Hướng dẫn viên</Link></li>
                       </ul>
-                    </li>
-
-                    <li className={isActive("/destination")}>
-                      {" "}
-                      <Link to="/destinations">Điểm đến</Link>
-                    </li>
-                    <li className={isActive("/service")}>
-                      {" "}
-                      <Link to="/service">Dịch Vụ</Link>
-                    </li>
-                    <li className={isActive("/contact")}>
-                      {" "}
-                      <Link to="/contact">Liên hệ</Link>
-                    </li>
+                    </li> */}
+                    <li className={isActive('/experience')}> <Link to="/experience">Kinh Nghiệm</Link></li>
+                    <li className={isActive('/destination')}> <Link to="/tours">Điểm đến</Link></li>
+                     <li className={isActive('/service')}> <Link to="/service">Dịch Vụ</Link></li>
+                    <li className={isActive('/contact')}> <Link to="/contact">Liên hệ</Link></li>
                   </ul>
                 </div>
               </nav>
