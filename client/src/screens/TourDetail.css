@@ -1,0 +1,87 @@
+.tour-detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.tour-detail-card {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.tour-image-section {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.tour-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.tour-info-section {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tour-title {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.tour-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.book-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: start;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.book-button:hover {
+  background-color: #d9363e;
+}
+
+.tour-description {
+  margin-top: 40px;
+}
+
+.tour-description h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.tour-description p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.back-button {
+  padding: 10px 16px;
+  border: none;
+  background-color: #1890ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
